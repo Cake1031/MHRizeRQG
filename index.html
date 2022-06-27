@@ -48,8 +48,12 @@
         </main>
         <textarea id="result" cols="30" rows="24"></textarea>
         <a href="update.html">更新情報</a>
-        
-        
         <script src="assets/script.js"></script>
+        <script>
+            if (navigator.userAgent.indexOf('iPhone') > 0) {
+                let body = document.getElementsByTagName('body')[0];
+                body.classList.add('iPhone');
+            }
+        </script>
     </body>
 </html>
