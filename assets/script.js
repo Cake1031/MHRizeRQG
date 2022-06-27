@@ -1,4 +1,8 @@
 "usestrict"
+if (navigator.userAgent.indexOf('iPhone') > 0) {
+    let body = document.getElementsByTagName('body')[0];
+    body.classList.add('iPhone');
+}
 const p_name1 =  document.getElementById("p_name1");
 const p_name2 =  document.getElementById("p_name2");
 const p_name3 =  document.getElementById("p_name3");
@@ -82,7 +86,7 @@ let armor = [
 let limit = [
     "回復薬禁止",
     "歩き禁止",
-    "回復薬グレート禁止",
+	"回復薬グレート禁止",
     "ダッシュ禁止",
     "緊急回避禁止",
     "状態異常回復系アイテム禁止",
