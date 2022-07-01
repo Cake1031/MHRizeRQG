@@ -217,9 +217,8 @@ let limit = [
     "食事以外のスキル無し",
     "モンスター討伐ごとに肉お供え",
     "ポーチ3枠(ガンナー5枠)まで",
-    "スリンガー系・罠・爆弾禁止",
+    "鉄蟲糸技禁止",
     "粉塵・秘薬類禁止",
-    "クラッチクロー禁止",
     "十字キー・右スティック封印",
     "奇声しか発せない",
     "ハイテンションでプレイ",
@@ -545,72 +544,79 @@ let quests = [
 ];
 
 function generate_quest() {
+    let p1_name = `【${p_name1.value}】\n`;
+    if(p_name2.value.length == 0 && p_name3.value.length == 0 && p_name4.value.length == 0) {
+        p1_name = "";
+    }
     let p1_text = "";
     let p1_weapon = "";
     let p1_armor = "";
     let p1_limit = "";
     if(weapon_check.checked) {
-        p1_weapon = "\n武器：" + weapons[Math.floor(Math.random() * weapons.length)];
+        p1_weapon = "武器：" + weapons[Math.floor(Math.random() * weapons.length)] + "\n";
     }
     if(armor_check.checked) {
-        p1_armor = "\n防具：" + armor[Math.floor(Math.random() * armor.length)];
+        p1_armor = "防具：" + armor[Math.floor(Math.random() * armor.length)] + "\n";
     }
     if(limit_check.checked) {
-        p1_limit = "\n縛り：" + limit[Math.floor(Math.random() * limit.length)];
+        p1_limit = "縛り：" + limit[Math.floor(Math.random() * limit.length)];
     }
     if(p_name1.value != "") {
-        p1_text = `【${p_name1.value}】${p1_weapon}${p1_armor}${p1_limit}\n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿`;
+        p1_text = `${p1_name}${p1_weapon}${p1_armor}${p1_limit}\n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿`;
     }
 
+    let p2_name = `【${p_name2.value}】\n`;
     let p2_text = "";
     let p2_weapon = "";
     let p2_armor = "";
     let p2_limit = "";
     if(weapon_check.checked) {
-        p2_weapon = "\n武器：" + weapons[Math.floor(Math.random() * weapons.length)];
+        p2_weapon = "武器：" + weapons[Math.floor(Math.random() * weapons.length)] + "\n";
     }
     if(armor_check.checked) {
-        p2_armor = "\n防具：" + armor[Math.floor(Math.random() * armor.length)];
+        p2_armor = "防具：" + armor[Math.floor(Math.random() * armor.length)] + "\n";
     }
     if(limit_check.checked) {
-        p2_limit = "\n縛り：" + limit[Math.floor(Math.random() * limit.length)];
+        p2_limit = "縛り：" + limit[Math.floor(Math.random() * limit.length)];
     }
     if(p_name2.value != "") {
-        p2_text = `【${p_name2.value}】${p2_weapon}${p2_armor}${p2_limit}\n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿`;
+        p2_text = `${p2_name}${p2_weapon}${p2_armor}${p2_limit}\n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿`;
     }
 
+    let p3_name = `【${p_name3.value}】\n`;
     let p3_text = "";
     let p3_weapon = "";
     let p3_armor = "";
     let p3_limit = "";
     if(weapon_check.checked) {
-        p3_weapon = "\n武器：" + weapons[Math.floor(Math.random() * weapons.length)];
+        p3_weapon = "武器：" + weapons[Math.floor(Math.random() * weapons.length)] + "\n";
     }
     if(armor_check.checked) {
-        p3_armor = "\n防具：" + armor[Math.floor(Math.random() * armor.length)];
+        p3_armor = "防具：" + armor[Math.floor(Math.random() * armor.length)] + "\n";
     }
     if(limit_check.checked) {
-        p3_limit = "\n縛り：" + limit[Math.floor(Math.random() * limit.length)];
+        p3_limit = "縛り：" + limit[Math.floor(Math.random() * limit.length)];
     }
     if(p_name3.value != "") {
-        p3_text = `【${p_name3.value}】${p3_weapon}${p3_armor}${p3_limit}\n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿`;
+        p3_text = `${p3_name}${p3_weapon}${p3_armor}${p3_limit}\n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿`;
     }
 
+    let p4_name = `【${p_name4.value}】\n`;
     let p4_text = "";
     let p4_weapon = "";
     let p4_armor = "";
     let p4_limit = "";
     if(weapon_check.checked) {
-        p4_weapon = "\n武器：" + weapons[Math.floor(Math.random() * weapons.length)];
+        p4_weapon = "武器：" + weapons[Math.floor(Math.random() * weapons.length)] + "\n";
     }
     if(armor_check.checked) {
-        p4_armor = "\n防具：" + armor[Math.floor(Math.random() * armor.length)];
+        p4_armor = "防具：" + armor[Math.floor(Math.random() * armor.length)] + "\n";
     }
     if(limit_check.checked) {
-        p4_limit = "\n縛り：" + limit[Math.floor(Math.random() * limit.length)];
+        p4_limit = "縛り：" + limit[Math.floor(Math.random() * limit.length)];
     }
     if(p_name4.value != "") {
-        p4_text = `【${p_name4.value}】${p4_weapon}${p4_armor}${p4_limit}\n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿`;
+        p4_text = `${p4_name}${p4_weapon}${p4_armor}${p4_limit}\n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿`;
     }
 
     if(star1.checked == false && quests_nums.indexOf(0) != -1) {
