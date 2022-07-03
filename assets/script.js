@@ -21,7 +21,10 @@ const m_star1 = document.getElementById("m-star1");
 const m_star2 = document.getElementById("m-star2");
 const m_star3 = document.getElementById("m-star3");
 const m_star4 = document.getElementById("m-star4");
-let quests_nums = [0,1,2,3,4,5,6,7,8,9,10,11,12];
+const m_star5 = document.getElementById("m-star5");
+const m_star6 = document.getElementById("m-star6");
+const ex = document.getElementById("ex");
+let quests_nums = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
 
 let weapons = [
 	"大剣",
@@ -539,7 +542,56 @@ let quests = [
         "クエスト：\n【M★4】千刃、襲来\n目標：\nセルレギオス1頭の狩猟",
         "クエスト：\n【M★4】ドロはドロでも熱いドロドロ\n目標：\nオロミドロ亜種1頭の狩猟",
         "クエスト：\n【M★4】婦人に人気の白騎士と鎧武者\n目標：\nベリオロス1頭と\nマガイマガド1頭の狩猟",
-        "クエスト：\n【M★4】眠れる密林の棘竜\n目標：\nエスピナス1頭の狩猟"
+        "クエスト：\n【M★4】黒き衣を纏う竜\n目標：\nゴアマガラ1頭の狩猟",
+        "クエスト：\n【M★4】絶対強者\n目標：\nティガレックス1頭の狩猟",
+        "クエスト：\n【M★4】噴煙うずまく妃の御前\n目標：\nヤツカダキ亜種1匹の狩猟",
+        "クエスト：\n【M★4】城塞高地に悪霊のウワサ！？\n目標：\nルナガロン1頭と\nガランゴルム1頭の狩猟",
+        "クエスト：\n【M★4】月光染めし紅\n目標：\nメルゼナ1体の討伐"
+    ],
+    [
+        "クエスト：\n【M★5】オトモ思いの助太刀ねがい\n目標：\nラージャン1頭の狩猟",
+        "クエスト：\n【M★5】爆鱗注意報\n目標：\nバゼルギウス1頭の狩猟",
+        "クエスト：\n【M★5】危険な森林浴\n目標：\nルナガロン1頭とジンオウガ1頭の狩猟",
+        "クエスト：\n【M★5】暗黒にまみれし凶刃\n目標：\nゴアマガラ1頭とセルレギオス1頭の狩猟",
+        "クエスト：\n【M★5】黒の中の白\n目標：\nシャガルマガラ1体の討伐",
+        "クエスト：\n【M★5】霧のごとく消え去る物\n目標：\nオオナズチ1体の討伐",
+        "クエスト：\n【M★5】氷点下の支配者\n目標：\nクシャルダオラ1体の討伐",
+        "クエスト：\n【M★5】燃えさかる日輪より紅く\n目標：\nテオテスカトル1体の討伐",
+        "クエスト：\n【M★5】悪魔の再来\n目標：\nガイアデルム1体の討伐"
+    ],
+    [
+        "クエスト：\n【M★6】逆巻く因果\n目標：\nイブシマキヒコ1体の討伐",
+        "クエスト：\n【M★6】戦慄く神解\n目標：\n百竜ノ淵源ナルハタタヒメ1体の討伐",
+        "クエスト：\n【M★6】羅刹激昂、天を衝く\n目標：\n激昂したラージャン1頭の狩猟"
+    ],
+    [
+        "クエスト：\n【EX★1】傀異調査：ドスバギィ\n目標：\nドスバギィ（傀異化）1頭の討伐",
+        "クエスト：\n【EX★1】傀異調査：アオアシラ\n目標：\nアオアシアケノシルム（傀異化）1頭の討伐ラ（傀異化）1頭の討伐",
+        "クエスト：\n【EX★1】傀異調査：オサイズチ\n目標：\nオサイズチ（傀異化）1頭の討伐",
+        "クエスト：\n【EX★1】傀異調査：クルルヤック\n目標：\nクルルヤック（傀異化）1頭の討伐",
+        "クエスト：\n【EX★1】傀異調査：ドスフロギィ\n目標：\nドスフロギィ（傀異化）1頭の討伐",
+        "クエスト：\n【EX★1】傀異調査：ラングロトラ\n目標：\nラングロトラ（傀異化）1頭の討伐",
+        "クエスト：\n【EX★1】傀異調査：ウルクスス\n目標：\nウルクスス（傀異化）1頭の討伐",
+
+        "クエスト：\n【EX★2】傀異調査：アケノシルム\n目標：\nアケノシルム（傀異化）1頭の討伐",
+        "クエスト：\n【EX★2】傀異調査：ヨツミワドウ\n目標：\nヨツミワドウ（傀異化）1頭の討伐",
+        "クエスト：\n【EX★2】傀異調査：ダイミョウザザミ\n目標：\nダイミョウザザミ（傀異化）1頭の討伐",
+
+        "クエスト：\n【EX★3】傀異調査：ビシュテンゴ亜種\n目標：\nビシュテンゴ亜種（傀異化）1頭の討伐",
+        "クエスト：\n【EX★3】傀異調査：リオレイア\n目標：\nリオレイア（傀異化）1頭の討伐",
+        "クエスト：\n【EX★3】傀異調査：ジュラトドス\n目標：\n	ジュラトドス（傀異化）1頭の討伐",
+        "クエスト：\n【EX★3】傀異調査：アンジャナフ\n目標：\nアンジャナフ（傀異化）1頭の討伐",
+        "クエスト：\n【EX★3】傀異調査：プケプケ\n目標：\nプケプケ（傀異化）1頭の討伐",
+        "クエスト：\n【EX★3】傀異調査：ショウグンギザミ\n目標：\nショウグンギザミ（傀異化）1頭の討伐",
+
+        "クエスト：\n【EX★4】傀異調査：ガランゴルム\n目標：\nガランゴルム1頭の討伐",
+        "クエスト：\n【EX★4】傀異調査：イソネミクニ亜種\n目標：\nイソネミクニ亜種1頭の討伐",
+        "クエスト：\n【EX★4】傀異調査：マガイマガド\n目標：\nマガイマガド1頭の討伐",
+        "クエスト：\n【EX★4】傀異調査：ヤツカダキ\n目標：\nヤツカダキ1頭の討伐",
+        "クエスト：\n【EX★4】傀異調査：ベリオロス\n目標：\nベリオロス1頭の討伐",
+        "クエスト：\n【EX★4】傀異調査：ゴシャハギ\n目標：\nゴシャハギ1頭の討伐",
+        "クエスト：\n【EX★4】傀異調査：ナルガクルガ\n目標：\nナルガクルガ1頭の討伐",
+        "クエスト：\n【EX★4】傀異調査：オロミドロ\n目標：\nオロミドロ1頭の討伐"
     ]
 ];
 
@@ -710,8 +762,28 @@ function generate_quest() {
     if(m_star4.checked == true && quests_nums.indexOf(12) == -1) {
         quests_nums.push(12);
     }
+    if(m_star5.checked == false && quests_nums.indexOf(13) != -1) {
+        m_star5_num = quests_nums.indexOf(13);
+        quests_nums.splice(m_star5_num,1);
+    }
+    if(m_star5.checked == true && quests_nums.indexOf(13) == -1) {
+        quests_nums.push(13);
+    }
+    if(m_star6.checked == false && quests_nums.indexOf(14) != -1) {
+        m_star6_num = quests_nums.indexOf(14);
+        quests_nums.splice(m_star6_num,1);
+    }
+    if(m_star6.checked == true && quests_nums.indexOf(14) == -1) {
+        quests_nums.push(14);
+    }
+    if(ex.checked == false && quests_nums.indexOf(15) != -1) {
+        ex_num = quests_nums.indexOf(15);
+        quests_nums.splice(ex_num,1);
+    }
+    if(ex.checked == true && quests_nums.indexOf(15) == -1) {
+        quests_nums.push(15);
+    }
     
-
     random_num = Math.floor(Math.random() * quests_nums.length);
 
     quests_text = "\n" + quests[quests_nums[random_num]][Math.floor(Math.random() * quests[quests_nums[random_num]].length)];
